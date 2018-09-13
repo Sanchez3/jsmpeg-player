@@ -25,6 +25,9 @@ export default class VideoElement {
       },
       hookInStop: () => {
       },
+      onEnd:() =>{
+        
+      }
     }, options);
 
 

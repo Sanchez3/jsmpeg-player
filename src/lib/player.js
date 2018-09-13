@@ -262,8 +262,9 @@ Player.prototype.updateForStaticFile = function () {
       this.seek(0);
     }
     else {
-      // this.pause();
-      this.stop();
+      this.pause();
+      // this.stop();
+      this.options.onEnd();
     }
   }
 };

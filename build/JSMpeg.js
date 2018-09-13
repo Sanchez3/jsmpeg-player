@@ -487,8 +487,9 @@ Player.prototype.updateForStaticFile = function () {
     if (this.loop) {
       this.seek(0);
     } else {
-      // this.pause();
-      this.stop();
+      this.pause(); // this.stop();
+
+      this.options.onEnd();
     }
   }
 };
@@ -534,7 +535,8 @@ function () {
       progressive: true,
       hookInPlay: function hookInPlay() {},
       hookInPause: function hookInPause() {},
-      hookInStop: function hookInStop() {}
+      hookInStop: function hookInStop() {},
+      onEnd: function onEnd() {}
     }, options);
     this.wrapper = isString(wrapper) ? document.querySelector(wrapper) : wrapper;
     this.container = document.createElement('div');
